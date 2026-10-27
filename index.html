@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Зола — кофейня и обжарка</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='32' fill='%23e8481c'/><text x='32' y='47' font-size='42' font-weight='900' text-anchor='middle' fill='white' font-family='sans-serif'>З</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;600;900&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+:root{--bg:#d8d4cc;--ink:#1c1b19;--ember:#e8481c;--milk:#f6f3ee;--crema:#b87a45;--line:rgba(28,27,25,.28);
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b1a18;--ink:#e9e5dc;--milk:#2a2825;--line:rgba(233,229,220,.25)}}
+:root[data-theme="dark"]{--bg:#1b1a18;--ink:#e9e5dc;--milk:#2a2825;--line:rgba(233,229,220,.25)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;height:100%}
+body{background:var(--bg);color:var(--ink);font:400 1.05rem/1.6 Onest,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.disp{font-family:Geologica,Onest,sans-serif}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,40px)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;font-weight:500}
+nav .logo{font:900 1.5rem Geologica;text-decoration:none}
+nav .links{display:flex;gap:26px}
+nav a{text-decoration:none}
+nav a:hover{color:var(--ember)}
+@media(max-width:620px){nav .links a:not(:last-child){display:none}}
+/* hero */
+.hero{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:20px;min-height:82vh;padding-bottom:40px}
+.hero h1{font-weight:900;font-size:clamp(5.2rem,21vw,15rem);line-height:.8;letter-spacing:-.05em;margin-left:-.04em}
+.hero h1 span{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.hero h1 i{display:inline-block;font-style:normal;transform:translateY(105%);animation:rise 1s cubic-bezier(.2,.8,.2,1) forwards}
+.hero h1 span:nth-child(2) i{animation-delay:.12s}.hero h1 span:nth-child(3) i{animation-delay:.24s}.hero h1 span:nth-child(4) i{animation-delay:.36s}
+@keyframes rise{to{transform:none}}
+.hero p{max-width:30ch;margin:34px 0 26px;font-size:1.2rem}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:15px 28px;border-radius:99px;font-weight:600;text-decoration:none;transition:background .25s,transform .25s}
+.btn:hover{background:var(--ember);color:#fff;transform:translateY(-2px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--ember);outline-offset:3px}
+.btn.ghost{background:none;color:var(--ink);border:1.5px solid var(--ink);margin-left:10px}
+.cup{width:100%;max-width:440px;justify-self:center;animation:spin 2.4s cubic-bezier(.15,.7,.2,1) both}
+@keyframes spin{from{transform:rotate(-200deg) scale(.6);opacity:0}to{transform:none;opacity:1}}
+@media(max-width:820px){.hero{grid-template-columns:1fr;min-height:0}.cup{max-width:320px;order:-1;margin-top:10px}.btn.ghost{margin:12px 0 0}}
+/* strip */
+.strip{background:var(--ink);color:var(--bg);overflow:hidden;white-space:nowrap;padding:16px 0;font:600 1.15rem Geologica}
+.strip div{display:inline-block;animation:slide 28s linear infinite}
+.strip b{color:var(--ember);margin:0 22px}
+@keyframes slide{to{transform:translateX(-50%)}}
+section{padding:clamp(70px,11vw,140px) 0}
+h2{font-weight:600;font-size:clamp(2rem,5vw,3.6rem);line-height:1.08;letter-spacing:-.025em;max-width:20ch}
+.about p.big{font:300 clamp(1.5rem,3.4vw,2.5rem)/1.3 Geologica;max-width:30ch;margin-top:26px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);margin-top:60px;border-top:1.5px solid var(--ink)}
+.facts div{padding:22px 24px 0 0}
+.facts b{display:block;font:900 clamp(2.4rem,6vw,4.2rem)/1 Geologica;color:var(--ember)}
+@media(max-width:640px){.facts{grid-template-columns:1fr}}
+/* menu */
+.menu{background:var(--milk)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px 70px;margin-top:50px}
+.cols h3{font:600 1.3rem Geologica;margin:30px 0 8px}
+.row{display:flex;align-items:baseline;gap:10px;padding:7px 0}
+.row i{flex:1;border-bottom:1.5px dotted var(--line);transform:translateY(-4px)}
+.row em{font-style:normal;font-size:.9rem;opacity:.65;display:block;line-height:1.3}
+.row b{font-weight:600;white-space:nowrap}
+@media(max-width:760px){.cols{grid-template-columns:1fr}}
+/* beans */
+.bags{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:54px}
+.bag{padding:80px 26px 26px;position:relative;border-radius:6px 6px 14px 14px;min-height:340px;display:flex;flex-direction:column;justify-content:flex-end;color:#fff}
+.bag::before{content:"";position:absolute;left:0;right:0;top:0;height:46px;background:rgba(0,0,0,.18);clip-path:polygon(0 0,100% 0,100% 40%,92% 100%,8% 100%,0 40%)}
+.bag h3{font:900 2rem/1 Geologica}
+.bag p{margin-top:10px;font-size:.95rem;max-width:22ch}
+.bag small{position:absolute;top:62px;left:26px;font-weight:600}
+.b1{background:var(--ember)}.b2{background:var(--crema)}.b3{background:#2f4a3d}
+@media(max-width:820px){.bags{grid-template-columns:1fr}.bag{min-height:230px}}
+/* visit */
+.visit{background:var(--ink);color:var(--bg)}
+.visit h2{max-width:14ch}
+.vgrid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:46px}
+.hours div{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.2);padding:12px 0;font-size:1.15rem}
+.visit .btn{background:var(--ember);color:#fff}
+.visit .btn:hover{background:var(--bg);color:var(--ink)}
+@media(max-width:760px){.vgrid{grid-template-columns:1fr}}
+footer{background:var(--ink);color:var(--bg);padding:0 0 34px;font-size:.9rem;opacity:.95}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-top:1px solid rgba(255,255,255,.2);padding-top:22px}
+/* reveal */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.js .clip{clip-path:inset(0 0 100% 0);transition:clip-path 1.1s cubic-bezier(.7,0,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .clip.in{clip-path:inset(0 0 0 0)}
+@media(prefers-reduced-motion:reduce){.js .rv,.js .clip{opacity:1;transform:none;clip-path:none;transition:none}.cup,.hero h1 i,.strip div{animation:none;transform:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#">Зола</a><div class="links"><a href="#menu">Меню</a><a href="#beans">Зёрна</a><a href="#visit">Как нас найти</a></div></nav>
+<header class="hero">
+<div>
+<h1 aria-label="Зола"><span><i>З</i></span><span><i>о</i></span><span><i>л</i></span><span><i>а</i></span></h1>
+<p>Обжариваем кофе сами, по чуть-чуть, каждый вторник. Варим его там же, где пахнет жареным зерном.</p>
+<a class="btn" href="#menu">Смотреть меню</a><a class="btn ghost" href="#visit">Забронировать столик</a>
+</div>
+<svg class="cup" viewBox="0 0 400 400" role="img" aria-label="Чашка капучино, вид сверху">
+<circle cx="200" cy="200" r="190" fill="#f6f3ee"/><circle cx="200" cy="200" r="190" fill="none" stroke="#1c1b19" stroke-width="3"/>
+<circle cx="200" cy="200" r="132" fill="#fff" stroke="#1c1b19" stroke-width="3"/>
+<circle cx="200" cy="200" r="112" fill="#8a5126"/><circle cx="200" cy="200" r="104" fill="#b87a45"/>
+<path d="M200 292C132 262 126 176 170 148c20-12 42-8 50 8 12-22 52-18 64 8 18 38-12 106-84 128z" fill="#f6f3ee"/>
+<path d="M200 270V176M200 244c-26-6-40-26-38-46M200 244c26-6 40-26 38-46M200 214c-16-4-24-14-22-28M200 214c16-4 24-14 22-28" stroke="#b87a45" stroke-width="5" fill="none" stroke-linecap="round"/>
+<path d="M326 140c46 0 52 74-4 78" fill="none" stroke="#1c1b19" stroke-width="3"/>
+</svg>
+</header>
+</div>
+<div class="strip" aria-hidden="true"><div>Эспрессо<b>●</b>Фильтр<b>●</b>Флэт уайт<b>●</b>Свежая обжарка<b>●</b>Круассаны<b>●</b>Холодный брю<b>●</b>Эспрессо<b>●</b>Фильтр<b>●</b>Флэт уайт<b>●</b>Свежая обжарка<b>●</b>Круассаны<b>●</b>Холодный брю<b>●</b></div></div>
+
+<section class="about"><div class="wrap">
+<h2 class="rv">Кофе, который не прячется за сиропом</h2>
+<p class="big rv" style="--d:.1s">Мы берём зерно у маленьких ферм, обжариваем в подвале под кофейней и подаём в течение двух недель после обжарки. Всё, что нужно, чтобы вкус был чистым.</p>
+<div class="facts">
+<div class="rv"><b>14</b>дней от обжарки до вашей чашки, не дольше</div>
+<div class="rv" style="--d:.12s"><b>6</b>сортов на фильтре, меняем каждый месяц</div>
+<div class="rv" style="--d:.24s"><b>7:30</b>открываемся, пока город ещё в пробках</div>
+</div></div></section>
+
+<section class="menu" id="menu"><div class="wrap">
+<h2 class="rv">Меню</h2>
+<div class="cols">
+<div class="rv">
+<h3>Эспрессо</h3>
+<div class="row"><div>Эспрессо<em>двойной, 36 г на выходе</em></div><i></i><b>180 ₽</b></div>
+<div class="row"><div>Американо</div><i></i><b>210 ₽</b></div>
+<div class="row"><div>Ристретто тоник<em>с цедрой апельсина</em></div><i></i><b>290 ₽</b></div>
+<h3>С молоком</h3>
+<div class="row"><div>Капучино</div><i></i><b>260 ₽</b></div>
+<div class="row"><div>Флэт уайт</div><i></i><b>290 ₽</b></div>
+<div class="row"><div>Латте на овсяном<em>или кокосовом, без доплаты</em></div><i></i><b>310 ₽</b></div>
+</div>
+<div class="rv" style="--d:.15s">
+<h3>Фильтр</h3>
+<div class="row"><div>Воронка V60<em>сорт дня, спросите бариста</em></div><i></i><b>320 ₽</b></div>
+<div class="row"><div>Кемекс на двоих<em>400 мл</em></div><i></i><b>590 ₽</b></div>
+<div class="row"><div>Холодный брю</div><i></i><b>300 ₽</b></div>
+<h3>Без кофе</h3>
+<div class="row"><div>Какао на тёмном шоколаде</div><i></i><b>280 ₽</b></div>
+<div class="row"><div>Чай из чайника<em>улун, пуэр или сенча</em></div><i></i><b>350 ₽</b></div>
+<div class="row"><div>Круассан с миндальным кремом</div><i></i><b>230 ₽</b></div>
+</div></div></div></section>
+
+<section id="beans"><div class="wrap">
+<h2 class="rv">Зёрна с собой, 250 г</h2>
+<div class="bags">
+<div class="bag b1 rv"><small>Эфиопия, мытая обработка</small><h3>Йирга</h3><p>Бергамот, персик, чёрный чай. Для воронки.</p></div>
+<div class="bag b2 rv" style="--d:.15s"><small>Колумбия, натуральная</small><h3>Уила</h3><p>Карамель, красное яблоко, какао. Для всего.</p></div>
+<div class="bag b3 rv" style="--d:.3s"><small>Бразилия, натуральная</small><h3>Серрадо</h3><p>Орех, горький шоколад. Для эспрессо и молока.</p></div>
+</div></div></section>
+
+<section class="visit" id="visit"><div class="wrap">
+<h2 class="rv">Заходите, место у окна ваше</h2>
+<div class="vgrid">
+<div class="hours rv"><div><span>Пн–Пт</span><b>7:30–21:00</b></div><div><span>Сб</span><b>9:00–22:00</b></div><div><span>Вс</span><b>9:00–20:00</b></div></div>
+<div class="rv" style="--d:.15s"><p style="font-size:1.25rem">ул. Лермонтова, 14<br>вход со двора, вторая арка</p><p style="margin:14px 0 26px;opacity:.75">Столики на компанию больше четырёх бронируем заранее.</p><a class="btn" href="tel:+70000000000">Позвонить</a></div>
+</div></div></section>
+<footer><div class="wrap"><span>© 2026 Зола</span><span style="flex-basis:100%;order:3;font-size:.75rem;opacity:.6">Демо-проект: вымышленная кофейня, сайт сделан для портфолио.</span><span><a href="#">ВКонтакте</a> &nbsp; <a href="#">Telegram</a></span></div></footer>
+<script>
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.15});
+document.querySelectorAll('.rv,.clip').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
